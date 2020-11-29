@@ -33,36 +33,32 @@ while True:
         break
 
 
-
-
-
 print('-=' * 30)
 
-print('Nº | name         | Goals      |Total')
+print('Nº | name           | Goals       |Total')
 print('-' * 25)
 for c in range(0, len(listPlayer)):
 
-    print(f'{c}{listPlayer[c]["name"]}|           {listPlayer[c]["goals"]}| {listPlayer[c]["totalGoals"]}')
+    print(f'{c:<4}',end='')
+    print(f'{listPlayer[c]["name"]:<17}', end='')
+    print(f'{str(listPlayer[c]["goals"]):<15}', end='')
+    print(f'{listPlayer[c]["totalGoals"]:<15}', end='')
+    print()
 
 print('-=' * 30)
 
 while True:
 
     playerNum = -1
-    while 0 > playerNum and playerNum < (len(listPlayer)-1):
-        playerNum = int(input('Choose a player by his number: '))
 
-    print(f'  --{listPlayer[playerNum]["name"]} STATS')
+    playerNum = int(input('Choose a player by his number: (Type 999 to stop) '))
 
-    for c in range(0, len(listPlayer[playerNum]['goals'])):
-        print(f'Game {c + 1} scored {listPlayer[playerNum]["goals"][c]} goals')
-
-    awnser = 'k'
-
-    while awnser not in 'yn':
-        awnser = str(input('\nWanna Continue? [Y/N]')).strip().lower()
-
-    if awnser == 'n':
+    if playerNum == 999:
         break
+    elif playerNum > (len(listPlayer) - 1) or playerNum < 0:
+        print('Type a valid number!!')
+    else:
+        print(f'  --{listPlayer[playerNum]["name"]} STATS')
 
-
+        for c in range(0, len(listPlayer[playerNum]['goals'])):
+            print(f'Game {c + 1} scored {listPlayer[playerNum]["goals"][c]} goals')
