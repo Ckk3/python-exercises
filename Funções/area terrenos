@@ -1,0 +1,9 @@
+def area(width, length):
+    print(f'The area of a {width}x{length}m terrain is {width * length}m² ')
+
+
+print('Area Calculator\n')
+width = float(input('Width (m): '))
+length = float(input('Lenght (m): '))
+
+area(width = width, length = length)
