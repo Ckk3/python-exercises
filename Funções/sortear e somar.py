@@ -10,18 +10,15 @@ def draw():
     print(f'The drawn numbers are {numbers}.')
 
 
-def pairsSum(pairs):
-    print(f'The sum of the pairs numbers are {sum(pairs)}')
+def pairsSum(numbers):
 
+    pairsList = list()
+    for num in numbers:
+        if num % 2 == 0:
+            pairsList.append(num)
+    print(f'The sum of the pairs numbers are {sum(pairsList)}')
 
 
 numbers = list()
 draw()
-
-pairsList = list()
-for num in numbers:
-    if num % 2 == 0:
-        pairsList.append(num)
-
-
-pairsSum(pairsList)
+pairsSum(numbers)
