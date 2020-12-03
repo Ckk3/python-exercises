@@ -1,15 +1,14 @@
 # Crie um programa que tenha uma função chamada voto() que vai receber como parâmetro o ano de nascimento de uma pessoa,
 # retornando um valor literal indicando se uma pessoa tem voto NEGADO, OPCIONAL e OBRIGATÓRIO nas eleições.
-from datetime import datetime
-
 
 def vote(year):
     '''
     :param year: Bith year of the person
     :return: the person vote status (DENIED, OPTIONAL, MANDATORY)
     '''
+    from datetime import date
     global age
-    age = int(int(datetime.now().year) - year)
+    age = int(int(date.today().year) - year)
 
     if age < 16:
         return 'DENIED'
