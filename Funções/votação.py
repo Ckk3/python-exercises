@@ -8,6 +8,7 @@ def vote(year):
     :param year: Bith year of the person
     :return: the person vote status (DENIED, OPTIONAL, MANDATORY)
     '''
+    global age
     age = int(int(datetime.now().year) - year)
 
     if age < 16:
@@ -19,5 +20,6 @@ def vote(year):
 
 
 birthYear = int(input('Type your birth year: '))
+situation = vote(birthYear)
 
-print(f'Your vote situation is {vote(birthYear)}')
+print(f'You {age} years old and your vote situation is {situation}')
